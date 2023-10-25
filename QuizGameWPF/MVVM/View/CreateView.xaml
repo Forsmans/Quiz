@@ -1,0 +1,235 @@
+﻿<UserControl x:Class="QuizGameWPF.MVVM.View.CreateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuizGameWPF.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <Grid>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1"
+                       Grid.ColumnSpan="5"
+                       Grid.Row="1"
+                       HorizontalAlignment="Center"
+                       Text="Create your own quiz!"
+                       FontSize="30"
+                       Foreground="White"
+                       FontFamily="/Fonts/#Poppins"/>
+            <TextBlock Grid.Column="1"
+                       Grid.ColumnSpan="5"
+                       Grid.Row="2"
+                       HorizontalAlignment="Center"
+                       Text="Answer A should be the correct answer"
+                       FontSize="15"
+                       Foreground="White"
+                       FontFamily="/Fonts/#Poppins"/>
+
+
+
+
+            <ScrollViewer Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="3" MinHeight="250" VerticalAlignment="Stretch" HorizontalAlignment="stretch">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+
+                    <ListBox Grid.Row="2"
+                             Grid.Column="9"
+                             Grid.RowSpan="22"
+                             x:Name="ImageList"
+                             Background="#413f4f"
+                             SelectionChanged="ImageList_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding ImagePath}" Width="64" Height="64" Margin="0,0,10,0"/>
+                                    <TextBlock Text="{Binding Text}" Foreground="#413f4f" Opacity="0.1"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+
+
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Question" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="/Fonts/#Poppins" />
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="Answer A" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="/Fonts/#Poppins"/>
+                    <TextBlock Grid.Row="0" Grid.Column="5" Text="Answer B" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="/Fonts/#Poppins"/>
+                    <TextBlock Grid.Row="0" Grid.Column="7" Text="Answer C" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="/Fonts/#Poppins"/>
+                    <TextBlock Grid.Row="0" Grid.Column="9" Text="Quiz Image" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="/Fonts/#Poppins"/>
+                    
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="Question1" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="2" Grid.Column="3" x:Name="AnswerA1" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="2" Grid.Column="5" x:Name="AnswerB1" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="2" Grid.Column="7" x:Name="AnswerC1" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="Question2" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="4" Grid.Column="3" x:Name="AnswerA2" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="4" Grid.Column="5" x:Name="AnswerB2" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="4" Grid.Column="7" x:Name="AnswerC2" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="6" Grid.Column="1" x:Name="Question3" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="6" Grid.Column="3" x:Name="AnswerA3" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="6" Grid.Column="5" x:Name="AnswerB3" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="6" Grid.Column="7" x:Name="AnswerC3" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="8" Grid.Column="1" x:Name="Question4" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="8" Grid.Column="3" x:Name="AnswerA4" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="8" Grid.Column="5" x:Name="AnswerB4" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="8" Grid.Column="7" x:Name="AnswerC4" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="10" Grid.Column="1" x:Name="Question5" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="10" Grid.Column="3" x:Name="AnswerA5" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="10" Grid.Column="5" x:Name="AnswerB5" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="10" Grid.Column="7" x:Name="AnswerC5" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="12" Grid.Column="1" x:Name="Question6" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="12" Grid.Column="3" x:Name="AnswerA6" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="12" Grid.Column="5" x:Name="AnswerB6" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="12" Grid.Column="7" x:Name="AnswerC6" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="14" Grid.Column="1" x:Name="Question7" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="14" Grid.Column="3" x:Name="AnswerA7" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="14" Grid.Column="5" x:Name="AnswerB7" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="14" Grid.Column="7" x:Name="AnswerC7" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="16" Grid.Column="1" x:Name="Question8" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="16" Grid.Column="3" x:Name="AnswerA8" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="16" Grid.Column="5" x:Name="AnswerB8" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="16" Grid.Column="7" x:Name="AnswerC8" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="18" Grid.Column="1" x:Name="Question9" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="18" Grid.Column="3" x:Name="AnswerA9" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="18" Grid.Column="5" x:Name="AnswerB9" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="18" Grid.Column="7" x:Name="AnswerC9" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="20" Grid.Column="1" x:Name="Question10" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="20" Grid.Column="3" x:Name="AnswerA10" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="20" Grid.Column="5" x:Name="AnswerB10" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="20" Grid.Column="7" x:Name="AnswerC10" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+
+                    <TextBox Grid.Row="22" Grid.Column="1" x:Name="Question11" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="22" Grid.Column="3" x:Name="AnswerA11" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="22" Grid.Column="5" x:Name="AnswerB11" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                    <TextBox Grid.Row="22" Grid.Column="7" x:Name="AnswerC11" FontFamily="/Fonts/#Poppins" Background="#413f4f"/>
+                </Grid>
+            </ScrollViewer>
+
+
+            <TextBlock Grid.Row="4"
+                       Grid.RowSpan="2"
+                       Grid.Column="1" 
+                       Grid.ColumnSpan="3"
+                       Text="Fill in atleast 3 questions and answers,&#x0a; choose an image  and title to create your Quiz!"
+                       Foreground="White"
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"
+                       FontFamily="/Fonts/#Poppins"
+                       Margin="0,10,0,0"/>
+            <TextBlock Text="Title"
+                       Grid.Row="4"
+                       Grid.Column="4"
+                       Grid.ColumnSpan="2"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="/Fonts/#Poppins"/>
+            <TextBox x:Name="TitleBox"
+                     VerticalContentAlignment="Center"
+                     Grid.Row="5"
+                     Grid.Column="4"
+                     Grid.ColumnSpan="2"
+                     HorizontalAlignment="Stretch"
+                     Background="#413f4f"
+                     FontFamily="/Fonts/#Poppins"/>
+            <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5"
+                     x:Name="Create"
+                     Content="Create"
+                     Click="CreateButton_Click"
+                     Height="70"
+                     Width="140"
+                     Foreground="White"
+                     Background="#90BE6D"
+                     FontSize="24"
+                     FontFamily="/Fonts/#Poppins"/>
+
+            
+
+
+
+
+
+        </Grid>
+        
+
+    </StackPanel>
+</UserControl>

@@ -33,115 +33,7 @@ namespace QuizGameWPF.MVVM.View
 
         }
 
-        private void CreateButton_Click(object sender, RoutedEventArgs e)
-        {
-            int numberOfQuestions = 3;
-
-            if (!IsQuizNameTaken())
-            {
-                if (AreAllTextboxesFilled(numberOfQuestions))
-                {
-                    CreateQuizQuestionsJson(numberOfQuestions);
-                    MessageBox.Show("Your quiz has been successfully created!\n It's now added to the list in Discover.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                else
-                {
-                    MessageBox.Show("You have to fill in all the fields for each question.", "Incomplete Form", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
-            }
-        }
-
-        private bool IsQuizNameTaken()
-        {
-            string title = TitleBox.Text.ToLower();
-            string filePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quiz.json");
-
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-                List<Question> questions = JsonSerializer.Deserialize<List<Question>>(json);
-
-                if (questions.Any(q => q.Title.ToLower() == title))
-                {
-                    MessageBox.Show("Quiz with the same title already exists.\n Please choose a different title.", "Title Already Taken", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-
-        private bool AreAllTextboxesFilled(int numberOfQuestions)
-        {
-            for (int i = 1; i <= numberOfQuestions; i++)
-            {
-                TextBox questionTextBox = (TextBox)FindName($"Question{i}");
-                TextBox answerATextBox = (TextBox)FindName($"AnswerA{i}");
-                TextBox answerBTextBox = (TextBox)FindName($"AnswerB{i}");
-                TextBox answerCTextBox = (TextBox)FindName($"AnswerC{i}");
-
-                if (string.IsNullOrWhiteSpace(questionTextBox.Text) || string.IsNullOrWhiteSpace(answerATextBox.Text) || string.IsNullOrWhiteSpace(answerBTextBox.Text) || string.IsNullOrWhiteSpace(answerCTextBox.Text))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        public void CreateQuizQuestionsJson(int numberOfQuestions)
-        {
-            string filePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quiz.json");
-
-            List<Question> questions;
-
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-                questions = JsonSerializer.Deserialize<List<Question>>(json);
-            }
-            else
-            {
-                questions = new List<Question>();
-            }
-
-            // Check if the title already exists
-            string title = TitleBox.Text.ToLower();
-            if (questions.Any(q => q.Title.ToLower() == title))
-            {
-                MessageBox.Show("Quiz with the same title already exists.\n Please choose a different title.", "Title Already Exists", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return; // Exit the method
-            }
-
-            List<Question> newQuestions = new List<Question>();
-
-            for (int i = 1; i <= numberOfQuestions; i++)
-            {
-                TextBox questionTextBox = (TextBox)FindName($"Question{i}");
-                TextBox answerATextBox = (TextBox)FindName($"AnswerA{i}");
-                TextBox answerBTextBox = (TextBox)FindName($"AnswerB{i}");
-                TextBox answerCTextBox = (TextBox)FindName($"AnswerC{i}");
-
-                ImageItem selectedImageItem = (ImageItem)ImageList.SelectedItem;
-                string imagePath = selectedImageItem != null ? selectedImageItem.ImagePath : "";
-
-                Question newQuestion = CreateQuestion(questionTextBox, answerATextBox, answerBTextBox, answerCTextBox, imagePath);
-
-                if (newQuestion != null)
-                {
-                    newQuestions.Add(newQuestion);
-                }
-            }
-
-            questions.AddRange(newQuestions);
-
-            string updatedJson = JsonSerializer.Serialize(questions);
-
-            File.WriteAllText(filePath, updatedJson);
-        }
-
-
+        //Load image list
         private List<ImageItem> GetImagesFromDirectory()
         {
             string filePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quiz.json");
@@ -171,23 +63,127 @@ namespace QuizGameWPF.MVVM.View
             return imageItems;
         }
 
-
-
-
-
-
         private void ImageList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ImageList.SelectedItem is ImageItem selectedImageItem)
             {
                 string selectedImagePath = selectedImageItem.ImagePath;
-                // Now you can use the selectedImagePath as needed.
             }
         }
 
+        //Button method
+        private async void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            int numberOfQuestions = 3;
 
+            if (!IsQuizNameTaken())
+            {
+                if (AreAllTextboxesFilled(numberOfQuestions))
+                {
+                    await CreateQuizQuestionsJsonAsync();
+                    MessageBox.Show("Your quiz has been successfully created!\n It's now added to the list in Discover.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("You have to fill in all the fields for each question.", "Incomplete Form", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+        }
 
+        //Checks if name is already taken
+        private bool IsQuizNameTaken()
+        {
+            string title = TitleBox.Text.ToLower();
+            string filePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quiz.json");
 
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                List<Question> questions = JsonSerializer.Deserialize<List<Question>>(json);
+
+                if (questions.Any(q => q.Title.ToLower() == title))
+                {
+                    MessageBox.Show("Quiz with the same title already exists.\n Please choose a different title.", "Title Already Taken", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        //Checks if a minimum of 3 questions are filled in
+        private bool AreAllTextboxesFilled(int numberOfQuestions)
+        {
+            for (int i = 1; i <= numberOfQuestions; i++)
+            {
+                TextBox questionTextBox = (TextBox)FindName($"Question{i}");
+                TextBox answerATextBox = (TextBox)FindName($"AnswerA{i}");
+                TextBox answerBTextBox = (TextBox)FindName($"AnswerB{i}");
+                TextBox answerCTextBox = (TextBox)FindName($"AnswerC{i}");
+
+                if (string.IsNullOrWhiteSpace(questionTextBox.Text) || string.IsNullOrWhiteSpace(answerATextBox.Text) || string.IsNullOrWhiteSpace(answerBTextBox.Text) || string.IsNullOrWhiteSpace(answerCTextBox.Text))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        //Creates quiz
+        public async Task CreateQuizQuestionsJsonAsync()
+        {
+            string filePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quiz.json");
+
+            List<Question> questions;
+
+            if (File.Exists(filePath))
+            {
+                string json = await File.ReadAllTextAsync(filePath);
+                questions = JsonSerializer.Deserialize<List<Question>>(json);
+            }
+            else
+            {
+                questions = new List<Question>();
+            }
+
+            string title = TitleBox.Text.ToLower();
+            if (questions.Any(q => q.Title.ToLower() == title))
+            {
+                MessageBox.Show("Quiz with the same title already exists.\n Please choose a different title.", "Title Already Exists", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            int questionIndex = 1;
+
+            while (true)
+            {
+                TextBox questionTextBox = (TextBox)FindName($"Question{questionIndex}");
+                TextBox answerATextBox = (TextBox)FindName($"AnswerA{questionIndex}");
+                TextBox answerBTextBox = (TextBox)FindName($"AnswerB{questionIndex}");
+                TextBox answerCTextBox = (TextBox)FindName($"AnswerC{questionIndex}");
+
+                if (questionTextBox == null || answerATextBox == null || answerBTextBox == null || answerCTextBox == null)
+                {
+                    break;
+                }
+
+                ImageItem selectedImageItem = (ImageItem)ImageList.SelectedItem;
+                string imagePath = selectedImageItem != null ? selectedImageItem.ImagePath : "";
+
+                Question newQuestion = CreateQuestion(questionTextBox, answerATextBox, answerBTextBox, answerCTextBox, imagePath);
+
+                if (newQuestion != null)
+                {
+                    questions.Add(newQuestion);
+                }
+
+                questionIndex++;
+            }
+
+            string updatedJson = JsonSerializer.Serialize(questions);
+            await File.WriteAllTextAsync(filePath, updatedJson);
+        }
         private Question CreateQuestion(TextBox questionTextBox, TextBox answerATextBox, TextBox answerBTextBox, TextBox answerCTextBox, string imagePath)
         {
             string questionText = questionTextBox.Text;
@@ -205,9 +201,6 @@ namespace QuizGameWPF.MVVM.View
                 return null;
             }
         }
-
-
-
     }
     public class ImageItem
     {

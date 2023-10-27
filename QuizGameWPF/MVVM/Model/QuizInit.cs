@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace QuizGameWPF.MVVM.Model
 {
+    //For handling stuff i need to access across the whole application
     public static class QuizInit
     {
         public static string ChoosenCategory { get; set; }
-        public static int indexOfQuiz { get; set; }
+        public static int CorrectAnswers { get; set; }
+        public static int TotalQuestions { get; set; }
+        public static int IndexOfQuiz { get; set; }
 
         private static int _barProgress;
 

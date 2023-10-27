@@ -31,6 +31,7 @@ namespace QuizGameWPF.MVVM.View
             LoadQuizTitles();
         }
 
+        //Loading quizes to the list
         private void LoadQuizTitles()
         {
             string filePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quiz.json");
@@ -41,15 +42,14 @@ namespace QuizGameWPF.MVVM.View
                 List<Question> questions = JsonSerializer.Deserialize<List<Question>>(json);
 
                 var titlesWithImages = questions
-                    .Select(q => new { Title = ToTitleCase(q.Title), ImagePath = q.ImagePath }) 
-                    .Where(title => title.Title != "Default")
+                    .Select(q => new { Title = ToTitleCase(q.Title), ImagePath = q.ImagePath })
+                    .Where(title => title.Title != "Default" && title.Title != "") 
                     .Distinct()
                     .ToList();
 
                 TitleList.ItemsSource = titlesWithImages;
             }
         }
-
         private string ToTitleCase(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
@@ -69,21 +69,25 @@ namespace QuizGameWPF.MVVM.View
             return string.Join(" ", words);
         }
 
-
+        //List selection method, changing the Category and playbutton color
         private void TitleList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (TitleList.SelectedItem != null)
+            if (TitleList.SelectedItems.Count > 0)
             {
-                var selectedTitleWithImage = (dynamic)TitleList.SelectedItem; // Cast to the anonymous type
-                string selectedTitle = selectedTitleWithImage.Title;
-                string selectedImagePath = selectedTitleWithImage.ImagePath;
-
-                // Use selectedTitle and selectedImagePath as needed
-                QuizInit.ChoosenCategory = selectedTitle.ToLower();
+                var selectedCategories = TitleList.SelectedItems.Cast<dynamic>();
+                string selectedCategoryTitles = string.Join(",", selectedCategories.Select(category => category.Title));
+                QuizInit.ChoosenCategory = selectedCategoryTitles.ToLower();
                 QuizInit.PlayColor = "#90BE6D";
             }
         }
 
+
+        //Button methods, changing the Category and playbutton color
+        private void RandomButton_Click(object sender, RoutedEventArgs e)
+        {
+            QuizInit.ChoosenCategory = "Random";
+            QuizInit.PlayColor = "#90BE6D";
+        }
 
         private void MusicBorder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -124,7 +128,6 @@ namespace QuizGameWPF.MVVM.View
             QuizInit.ChoosenCategory = "history";
             QuizInit.PlayColor = "#90BE6D";
         }
-
         private void Geography_MouseLeftButtonDown(Object sender, MouseButtonEventArgs e)
         {
             QuizInit.ChoosenCategory = "geography";

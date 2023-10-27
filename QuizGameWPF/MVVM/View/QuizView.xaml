@@ -63,11 +63,22 @@
                    Margin="0,0,50,0"
                    Opacity="0.3"/>
 
+        <TextBlock Grid.Column="1"
+           Grid.Row="1"
+           Grid.ColumnSpan="1"
+           x:Name="QuizPosition"
+           HorizontalAlignment="Left"
+           Margin="10,0,0,0"
+           Text=""
+           Foreground="White"
+           FontSize="18"
+           FontFamily="/Fonts/#Poppins"/>
 
 
 
-        <!--<UniformGrid Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="7" Columns="3" HorizontalAlignment="Center">-->
-            <Button Grid.Column="1" Grid.Row="3"
+
+
+        <Button Grid.Column="1" Grid.Row="3"
                     x:Name="AnswerA"
                     Tag="0"
                     Click="AnswerButton_Click"
@@ -103,7 +114,7 @@
                     Content="{Binding CurrentQuestion.Answers[2]}"
                     FontSize="16"
                     FontFamily="/Fonts/#Poppins"/>
-        <!--</UniformGrid>-->
+       
 
 
     </Grid>

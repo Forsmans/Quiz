@@ -9,17 +9,19 @@ using System.Threading.Tasks;
 namespace QuizGameWPF.MVVM.ViewModel
 {
     
-
+    //For changing the CurrentView in the MainWindow
     class MainViewModel : ObservableObject
     {
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand DiscoverViewCommand { get; set; }
         public RelayCommand GameViewCommand { get; set; }
         public RelayCommand CreateViewCommand { get; set; }
+        public RelayCommand EditViewCommand { get; set; }
         public HomeViewModel HomeVM { get; set; }
         public DiscoverViewModel DiscoverVM { get; set; }
         public QuizViewModel QuizVM { get; set; }
         public CreateViewModel CreateVM { get; set; }
+        public EditViewModel EditVM { get; set; }
 
         private object _currentView;
 
@@ -38,6 +40,7 @@ namespace QuizGameWPF.MVVM.ViewModel
             DiscoverVM = new DiscoverViewModel();
             QuizVM = new QuizViewModel(QuizInit.ChoosenCategory);
             CreateVM = new CreateViewModel();
+            EditVM = new EditViewModel();
 
             CurrentView = HomeVM;
 
@@ -60,6 +63,11 @@ namespace QuizGameWPF.MVVM.ViewModel
             CreateViewCommand = new RelayCommand(o =>
             {
                 CurrentView = CreateVM;
+            });
+
+            EditViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = EditVM;
             });
         }
 

@@ -18,26 +18,30 @@ namespace QuizGameWPF.MVVM.Model
         {
             _title = title;
             _questions = questions;
-        }
-        
+        }        
         public Question GetRandomQuestion()
         {
-            if(_questions.Count > 0)
+            if(QuizInit.ChoosenCategory != null)
             {
-                Random random = new Random();
-                int randomIndex = random.Next(0, _questions.Count);
-                return _questions[randomIndex];
+                if (_questions.Count > 0)
+                {
+                    Random random = new Random();
+                    int randomIndex = random.Next(0, _questions.Count);
+                    return _questions[randomIndex];
+                }
+                else
+                {
+                    AddQuestion($"Congratulations, you answered all the questions!\n You have answered {QuizInit.CorrectAnswers} of {QuizInit.TotalQuestions} questions correct\n Choose another category in Discover!", 3, "/images/quizlogo.png", "Default", new string[] { "", "", "" });
+                    return Questions[0];
+                }
             }
-            else
-            {
-                return new Question($"Congratulations, you answered all the questions!\n You have answered {QuizInit.BarProgress} questions\n Choose another in Discover!", new string[] { "", "", "" }, 3, "Default", "/images/quizlogo.png"); ;
-            }
-            
+            AddQuestion("Choose a quiz in 'Discover' to start!", 3, "/images/quizlogo.png", "Default", new string[] { "", "", "" });
+            return Questions[0];
         }
 
-        public void AddQuestion(string statement, int correctAnswer, string imagepath, params string[] answers)
+        public void AddQuestion(string statement, int correctAnswer, string imagepath, string title, params string[] answers)
         {
-            Question newQuestion = new Question(statement, answers, correctAnswer, _title, imagepath);
+            Question newQuestion = new Question(statement, answers, correctAnswer, title, imagepath);
             _questions.Add(newQuestion);
         }
 

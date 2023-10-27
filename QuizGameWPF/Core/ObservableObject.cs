@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace QuizGameWPF.Core
 {
+    //Notifying when a property changes in an observable object
     public class ObservableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

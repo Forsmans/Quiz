@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+    <PackageReference Include="Notification.Wpf" Version="7.0.0.2" />
   </ItemGroup>
 
   <ItemGroup>

@@ -11,21 +11,9 @@
         Background="#272537"
         WindowTitleBrush="#272537"
         NonActiveWindowTitleBrush="#272537"
-        NonActiveBorderBrush="#272537"
+        NonActiveBorderBrush="#413f4f"
         BorderBrush="#272537"
         WindowStartupLocation="CenterScreen">
-
-    <mah:MetroWindow.LeftWindowCommands>
-        <mah:WindowCommands>
-            <Image Source="quizlogo.png"
-                   Height="22"
-                   Width="22"/>
-        </mah:WindowCommands>
-    </mah:MetroWindow.LeftWindowCommands>
-
-
-
-
 
 
     <Window.DataContext>
@@ -48,7 +36,7 @@
             <Image Source="/Images/logo.png"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
-                   Margin="20,10,0,2"/>
+                   Margin="25,0,0,20"/>
 
             
             <TextBlock Text="UIZ TIME"
@@ -56,7 +44,7 @@
                        HorizontalAlignment="Right"
                        Foreground="White"
                        FontSize="22"
-                       Margin="0,0,30,0"
+                       Margin="0,0,35,10"
                        FontFamily="/Fonts/#Poppins"/>
 
             <StackPanel Grid.Row="1">
@@ -81,8 +69,14 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding CreateViewCommand}"/>
-                
-                
+
+                <RadioButton Content="Edit"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding EditViewCommand}"/>
+
             </StackPanel>
             
             <StackPanel Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,20">
@@ -94,29 +88,17 @@
                              FontSize="24"
                              Background="{Binding PlayButtonColor}"
                              Command="{Binding GameViewCommand}"/>
-                <!--<TextBlock Text="Choose a Category in Discover"
-                           HorizontalAlignment="Center"
-                           FontSize="9"
-                           Foreground="White"
-                           FontFamily="/Fonts/#Poppins"
-                           Margin="0,5,0,0"/>-->
+                
             </StackPanel>
             
-            <!--Searchbar
-            <TextBox Width="250"
-                       Height="40"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       Margin="5"
-                       Grid.Column="1"
-                       Style="{StaticResource TextboxTheme}"/>-->
+            
 
             <mah:MetroProgressBar x:Name="ProgressBar"
                                   Grid.Column="1"
                                   Grid.ColumnSpan="2"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
-                                  Margin="0,0,50,0"
+                                  Margin="0,0,50,10"
                                   Minimum="0"
                                   Maximum="100"
                                   Height="25"

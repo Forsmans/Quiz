@@ -3,6 +3,7 @@ using System.Windows.Input;
 
 namespace QuizGameWPF.Core
 {
+    //Allowing the execution of actions and checking if they can be executed
     class RelayCommand : ICommand
     {
         private Action<object> _execute;

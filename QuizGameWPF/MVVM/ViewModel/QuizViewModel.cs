@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace QuizGameWPF.MVVM.ViewModel
@@ -14,7 +15,7 @@ namespace QuizGameWPF.MVVM.ViewModel
     {
         private Quiz _currentQuiz;
         private Question _currentQuestion;
-    
+
         public Question CurrentQuestion
         {
             get { return _currentQuestion; }
@@ -36,47 +37,101 @@ namespace QuizGameWPF.MVVM.ViewModel
 
         public QuizViewModel(string title)
         {
+            InitializeAsync(title).GetAwaiter().GetResult();
+        }
+
+        //Initialize quiz
+        public async Task<QuizViewModel> InitializeAsync(string title)
+        {
             CreateQuizQuestionsJason();
-            Quiz quiz = new(title, LoadQuestionsFromJsonFile(title));
+            Quiz quiz = new(title, await LoadQuestionsFromJsonFile(title));
             CurrentQuiz = quiz;
             CurrentQuestion = CurrentQuizQuestion(quiz);
+            return this;
         }
-
         public Question CurrentQuizQuestion(Quiz quiz)
         {
-                return CurrentQuiz.GetRandomQuestion(); 
+            return CurrentQuiz.GetRandomQuestion();
         }
 
-        public List<Question> LoadQuestionsFromJsonFile(string title)
+
+        //Loading quiz
+        public async Task<List<Question>> LoadQuestionsFromJsonFile(string title)
         {
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quiz.json");
-
-            if (File.Exists(filePath))
+            if (QuizInit.ChoosenCategory != null)
             {
-                string json = File.ReadAllText(filePath);
-                List<Question> questions = JsonSerializer.Deserialize<List<Question>>(json);
+                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "quiz.json");
 
-                // Filter questions by the specified category
-                List<Question> filteredQuestions = questions
-                    .Where(q => q.Title == title)
-                    .GroupBy(q => q.Statement) // Group questions with the same text (assuming the text should be unique)
-                    .Select(group => group.First()) // Select only the first question with the same text
-                    .ToList();
+                if (File.Exists(filePath))
+                {
+                    string json = File.ReadAllText(filePath);
+                    List<Question> questions = JsonSerializer.Deserialize<List<Question>>(json);
 
-                return filteredQuestions;
+                    if (title == "Random")
+                    {
+                        var filteredQuestions = questions
+                            .Where(q => q.Title != "Default")
+                            .ToList();
+
+                        List<Question> randomQuestions = new List<Question>();
+                        Random random = new Random();
+
+                        while (randomQuestions.Count < 10 && filteredQuestions.Count > 0)
+                        {
+                            int index = random.Next(filteredQuestions.Count);
+                            var randomQuestion = filteredQuestions[index];
+
+                            randomQuestions.Add(randomQuestion);
+                            filteredQuestions.RemoveAt(index);
+                        }
+
+                        return randomQuestions;
+                    }
+                    else
+                    {
+                        if (QuizInit.ChoosenCategory.Contains(","))
+                        {
+                            List<Question> randomQuestions = new List<Question>();
+                            Random random = new Random();
+
+                            var categories = QuizInit.ChoosenCategory.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                            var filteredQuestions = questions
+                                .Where(q => categories.Any(category => string.Equals(q.Title, category, StringComparison.OrdinalIgnoreCase) && q.Title != "Default"))
+                                .ToList();
+
+                            while (randomQuestions.Count < 10 && filteredQuestions.Count > 0)
+                            {
+                                int index = random.Next(filteredQuestions.Count);
+                                var randomQuestion = filteredQuestions[index];
+
+                                randomQuestions.Add(randomQuestion);
+                                filteredQuestions.RemoveAt(index);
+                            }
+                            return randomQuestions;
+                        }
+
+                        else
+                        {
+                            var groupedQuestions = questions
+                            .Where(q => q.Title == title)
+                            .GroupBy(q => q.Statement)
+                            .Select(group => group.First())
+                            .ToList();
+
+                            return groupedQuestions;
+                        }
+                    }
+                }
+
+                return new List<Question>();
             }
             return new List<Question>();
         }
 
-
+        //Create default quiz question on first startup
         public void CreateQuizQuestionsJason()
         {
-            //List<Question> defaultQuestion = new List<Question>
-            //{
-            //    new Question("Choose a quiz in 'Discover' to start!", new string[] { "", "", "" }, 3, "Default"),
-
-            //};
-
             List<Question> sportsQuestions = new List<Question>
             {
                 new Question("Which sport is known as the 'gentleman's game'?", new string[] { "Cricket", "Soccer", "Tennis" }, 0, "sports", "/images/sports.png"),
@@ -104,7 +159,7 @@ namespace QuizGameWPF.MVVM.ViewModel
                 new Question("Which rock band released the album 'The Dark Side of the Moon'?", new string[] { "Pink Floyd", "Led Zeppelin", "The Rolling Stones" }, 0, "music", "/images/music.png"),
                 new Question("Who is known as the 'Piano Man' and released the song of the same name?", new string[] { "Billy Joel", "Elton John", "John Lennon" }, 0, "music", "/images/music.png")
             };
-            
+
             List<Question> politicsQuestions = new List<Question>
             {
                 new Question("Who is the current President of the United States?", new string[] { "Joe Biden", "Donald Trump", "Barack Obama" }, 0, "politics", "/images/politics.png"),
@@ -118,7 +173,7 @@ namespace QuizGameWPF.MVVM.ViewModel
                 new Question("Which document begins with the words 'We the People'?", new string[] { "The U.S. Constitution", "The Declaration of Independence", "The Bill of Rights" }, 0, "politics", "/images/politics.png"),
                 new Question("What is the system of government where power is divided between a central government and regional governments?", new string[] { "Federalism", "Monarchy", "Totalitarianism" }, 0, "politics", "/images/politics.png")
             };
-            
+
             List<Question> animalQuestions = new List<Question>
             {
                 new Question("What is the largest land animal in the world?", new string[] { "African Elephant", "White Rhino", "Giraffe" }, 0, "animals", "/images/animals.png"),
@@ -132,21 +187,21 @@ namespace QuizGameWPF.MVVM.ViewModel
                 new Question("Which reptile is known for changing the color of its skin?", new string[] { "Chameleon", "Iguana", "Komodo Dragon" }, 0, "animals", "/images/animals.png"),
                 new Question("What is the largest species of bear?", new string[] { "Kodiak Bear", "Polar Bear", "Brown Bear" }, 0, "animals", "/images/animals.png")
             };
-            
+
             List<Question> generalKnowledgeQuestions = new List<Question>
             {
-                new Question("What is the capital of France?", new string[] { "Paris", "Madrid", "Berlin" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("Which planet is known as the 'Red Planet'?", new string[] { "Mars", "Venus", "Saturn" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("Who wrote 'Romeo and Juliet'?", new string[] { "William Shakespeare", "Charles Dickens", "Leo Tolstoy" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("What is the largest planet in our solar system?", new string[] { "Jupiter", "Saturn", "Neptune" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("Which gas do plants absorb from the atmosphere?", new string[] { "Carbon Dioxide", "Oxygen", "Nitrogen" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("Which country is known as the 'Land of the Rising Sun'?", new string[] { "Japan", "China", "South Korea" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("What is the chemical symbol for gold?", new string[] { "Au", "Ag", "Fe" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("Who painted the Mona Lisa?", new string[] { "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("What is the largest ocean in the world?", new string[] { "Pacific Ocean", "Atlantic Ocean", "Indian Ocean" }, 0, "generalknowledge", "/images/generalknowledge.png"),
-                new Question("In which year did Christopher Columbus discover America?", new string[] { "1492", "1776", "1620" }, 0, "generalknowledge", "/images/generalknowledge.png")
+                new Question("What is the capital of France?", new string[] { "Paris", "Madrid", "Berlin" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("Which planet is known as the 'Red Planet'?", new string[] { "Mars", "Venus", "Saturn" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("Who wrote 'Romeo and Juliet'?", new string[] { "William Shakespeare", "Charles Dickens", "Leo Tolstoy" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("What is the largest planet in our solar system?", new string[] { "Jupiter", "Saturn", "Neptune" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("Which gas do plants absorb from the atmosphere?", new string[] { "Carbon Dioxide", "Oxygen", "Nitrogen" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("Which country is known as the 'Land of the Rising Sun'?", new string[] { "Japan", "China", "South Korea" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("What is the chemical symbol for gold?", new string[] { "Au", "Ag", "Fe" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("Who painted the Mona Lisa?", new string[] { "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("What is the largest ocean in the world?", new string[] { "Pacific Ocean", "Atlantic Ocean", "Indian Ocean" }, 0, "general knowledge", "/images/generalknowledge.png"),
+                new Question("In which year did Christopher Columbus discover America?", new string[] { "1492", "1776", "1620" }, 0, "general knowledge", "/images/generalknowledge.png")
             };
-            
+
             List<Question> movieQuestions = new List<Question>
             {
                 new Question("Who played the role of Jack Dawson in the movie 'Titanic'?", new string[] { "Leonardo DiCaprio", "Brad Pitt", "Tom Hanks" }, 0, "movies", "/images/movie.png"),
@@ -160,7 +215,7 @@ namespace QuizGameWPF.MVVM.ViewModel
                 new Question("Which movie features a character named 'Hannibal Lecter'?", new string[] { "The Silence of the Lambs", "Se7en", "Shutter Island" }, 0, "movies", "/images/movie.png"),
                 new Question("What 1994 film was the first feature-length movie created entirely through computer-generated imagery (CGI)?", new string[] { "Toy Story", "Jurassic Park", "Avatar" }, 0, "movies", "/images/movie.png")
             };
-            
+
             List<Question> historyQuestions = new List<Question>
             {
                 new Question("Who was the first President of the United States?", new string[] { "George Washington", "Thomas Jefferson", "John Adams" }, 0, "history", "/images/history.png"),
@@ -174,7 +229,7 @@ namespace QuizGameWPF.MVVM.ViewModel
                 new Question("What event is often considered the start of World War I?", new string[] { "Assassination of Archduke Franz Ferdinand", "Bombing of Hiroshima and Nagasaki", "Signing of the Treaty of Versailles" }, 0, "history", "/images/history.png"),
                 new Question("Which ancient civilization is known for constructing the pyramids in Egypt?", new string[] { "Ancient Egyptians", "Mayans", "Romans" }, 0, "history", "/images/history.png")
             };
-            
+
             List<Question> geographyQuestions = new List<Question>
             {
                 new Question("Which city is located at the confluence of the Danube and Sava rivers and is the capital of Serbia?", new string[] { "Belgrade", "Bucharest", "Zagreb" }, 0, "geography", "/images/georaphy.png"),

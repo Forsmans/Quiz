@@ -1,0 +1,123 @@
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.exe
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.deps.json
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.runtimeconfig.json
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.pdb
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\ControlzEx.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\MahApps.Metro.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\de\MahApps.Metro.resources.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.AssemblyReference.cache
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\Theme\MenuButtonTheme.baml
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\DiscoverView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\HomeView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_MarkupCompile.cache
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_MarkupCompile.lref
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\App.baml
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MainWindow.baml
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\DiscoverView.baml
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\HomeView.baml
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.g.resources
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.AssemblyInfoInputs.cache
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.AssemblyInfo.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.CoreCompileInputs.cache
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.CopyComplete
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\refint\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.pdb
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.genruntimeconfig.cache
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\ref\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.exe
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.deps.json
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.runtimeconfig.json
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.pdb
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\ControlzEx.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\MahApps.Metro.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\Notification.Wpf.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\bin\Debug\net7.0-windows\de\MahApps.Metro.resources.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.AssemblyReference.cache
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\Theme\MenuButtonTheme.baml
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\CreateView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\DiscoverView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\EditView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\HomeView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\QuizView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_Content.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_MarkupCompile.cache
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_MarkupCompile.lref
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\App.baml
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MainWindow.baml
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\CreateView.baml
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\DiscoverView.baml
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\EditView.baml
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\HomeView.baml
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\QuizView.baml
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.g.resources
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.AssemblyInfoInputs.cache
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.AssemblyInfo.cs
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.CoreCompileInputs.cache
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.CopyComplete
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\refint\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.pdb
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.genruntimeconfig.cache
+C:\Users\forsm\Documents\Code\QuizTime\QuizGameWPF\obj\Debug\net7.0-windows\ref\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\bin\Debug\net7.0-windows\Notification.Wpf.dll
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\CreateView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\EditView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\QuizView.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_Content.g.cs
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\CreateView.baml
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\EditView.baml
+C:\Users\forsm\Documents\Code\QuizTime - Copy\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\QuizView.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.exe
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.deps.json
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.runtimeconfig.json
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\QuizTime.pdb
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\ControlzEx.dll
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\MahApps.Metro.dll
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\Notification.Wpf.dll
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\bin\Debug\net7.0-windows\de\MahApps.Metro.resources.dll
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.AssemblyReference.cache
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\Theme\MenuButtonTheme.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\CreateView.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\DiscoverView.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\EditView.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\HomeView.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\QuizView.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_Content.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_MarkupCompile.cache
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime_MarkupCompile.lref
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\App.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MainWindow.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\CreateView.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\DiscoverView.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\EditView.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\HomeView.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\MVVM\View\QuizView.baml
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.g.resources
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.AssemblyInfoInputs.cache
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.AssemblyInfo.cs
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.CoreCompileInputs.cache
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.csproj.CopyComplete
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\refint\QuizTime.dll
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.pdb
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\QuizTime.genruntimeconfig.cache
+C:\Users\forsm\Documents\Code\QuizTimeFinal\QuizGameWPF\obj\Debug\net7.0-windows\ref\QuizTime.dll

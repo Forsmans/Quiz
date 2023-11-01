@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "rspbcoLRmAXECqdWEl++ERllD23cjDy0UReJGHSyjLJHH+f09IRlPLpHWDjLNPtiWZGGOLg/c8iDOONvW4wcPA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\forsm\\Documents\\Code\\QuizTimeFinal\\QuizGameWPF\\QuizTime.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\forsm\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\Users\\forsm\\.nuget\\packages\\mahapps.metro\\2.4.10\\mahapps.metro.2.4.10.nupkg.sha512",
+    "C:\\Users\\forsm\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\forsm\\.nuget\\packages\\notification.wpf\\7.0.0.2\\notification.wpf.7.0.0.2.nupkg.sha512",
+    "C:\\Users\\forsm\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\forsm\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

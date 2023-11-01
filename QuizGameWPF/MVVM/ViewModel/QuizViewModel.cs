@@ -11,6 +11,7 @@ using System.Windows.Input;
 
 namespace QuizGameWPF.MVVM.ViewModel
 {
+    //testpush
     class QuizViewModel : ObservableObject
     {
         private Quiz _currentQuiz;
